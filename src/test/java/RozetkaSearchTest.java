@@ -1,14 +1,16 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class RozetkaSearchTest {
+    @Test
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
-        categoryPage categoryPage = new categoryPage(driver);
-        homePage homePage = new homePage(driver);
+        CategoryPage categoryPage = new CategoryPage(driver);
+        HomePage homePage = new HomePage(driver);
 
-        homePage.openHomePage();
+        homePage.openHomePage().enterTextInSearchBar("");
         homePage.enterTextInSearchBar("Кавомашина");
         homePage.waitSeconds(2);
         homePage.selectFirstSuggestion();

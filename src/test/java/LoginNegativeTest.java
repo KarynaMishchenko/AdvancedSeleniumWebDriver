@@ -1,12 +1,14 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class LoginNegativeTest {
+    @Test
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
-        homePage homePage = new homePage(driver);
-        loginPage loginPage = new loginPage(driver);
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         homePage.openHomePage();
         homePage.clickOnUserIcon();
         homePage.waitSeconds(2);

@@ -1,27 +1,22 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.asserts.Assertion;
 
 import java.time.Duration;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class homePage {
+public class HomePage {
     private WebDriver driver;
 
-    public homePage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
-
-    public void openHomePage() {
+    public HomePage openHomePage() {
         driver.get("https://rozetka.com.ua/ua/");
+        return this;
     }
     public void enterTextInSearchBar(String searchText){
         WebElement textBox = driver.findElement(By.name("search"));
@@ -70,4 +65,5 @@ public class homePage {
         WebElement userIcon =  driver.findElement(By.cssSelector("use[href='#icon-user-simple']"));
         userIcon.click();
     }
+
 }
